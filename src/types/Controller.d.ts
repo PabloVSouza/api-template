@@ -1,0 +1,3 @@
+interface IControllers {
+  methods: IMethods
+}

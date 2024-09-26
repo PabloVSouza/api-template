@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express'
-import requireAuth from '@/middlewares/requireAuth'
-import ErrorHandler from '@/utils/ErrorHandler'
-import ResponseFormatter from '@/utils/ResponseFormatter'
+import requireAuth from 'middlewares/requireAuth'
+import ErrorHandler from 'utils/ErrorHandler'
+import ResponseFormatter from 'utils/ResponseFormatter'
 
 class Routes {
   public routes: Router
@@ -27,7 +27,7 @@ class Routes {
     const middleWareKeys = Object.keys(this.availableMiddleWares)
 
     const middleWares = Object.keys(params)
-      .filter((param) => middleWareKeys.includes(param))
+      .filter((param) => middleWareKeys.includes(param) && params[param] === true)
       .map((param) => this.availableMiddleWares[param])
 
     return middleWares

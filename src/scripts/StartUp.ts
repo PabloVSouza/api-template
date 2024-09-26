@@ -1,4 +1,4 @@
-import Server from './Server'
+import Server from 'scripts/Server'
 import 'dotenv/config'
 
 class StartUp {

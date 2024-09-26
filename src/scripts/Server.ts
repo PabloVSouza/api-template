@@ -1,8 +1,7 @@
 import express, { Express } from 'express'
 import cors from 'cors'
 import Routes from 'scripts/Routes'
-import Controllers from '@/controllers/Controllers'
-import { middleware } from 'apicache'
+import Controllers from 'controllers/Controllers'
 
 class Server {
   private app: Express

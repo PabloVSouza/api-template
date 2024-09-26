@@ -15,7 +15,7 @@
       "@/*": ["./src/*"],
       "controllers/*": ["./src/controllers/*"],
       "scripts/*": ["./src/scripts/*"],
-      "types/*": ["./src/types/*"],
+      "middlewares/*": ["./src/middlewares/*"],
       "utils/*": ["./src/utils/*"]
     }
   }

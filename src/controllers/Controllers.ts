@@ -1,5 +1,5 @@
 import UserController from 'controllers/User/UserController'
-import HelloWorldController from './HelloWorld/HelloWorldController'
+import HelloWorldController from 'controllers/HelloWorld/HelloWorldController'
 
 class Controllers {
   public methods = {} as IMethods

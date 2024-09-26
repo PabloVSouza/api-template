@@ -7,6 +7,7 @@ interface IMethodParams {
   accessLevel?: number
   route?: string
   verb: 'get' | 'post' | 'put' | 'patch' | 'delete'
+  [key: string]: any
 }
 
 interface IMethod {

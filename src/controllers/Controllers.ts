@@ -18,15 +18,6 @@ class Controllers {
       authenticateController
     }
   }
-
-  // Combine all methods from the controllers into one object
-  public getAllMethods() {
-    return {
-      ...this.controllers.helloWorldController.methods,
-      ...this.controllers.userController.methods,
-      ...this.controllers.authenticateController.methods
-    }
-  }
 }
 
 export default Controllers

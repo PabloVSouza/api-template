@@ -1,15 +1,30 @@
 import UserController from 'controllers/User/UserController'
 import HelloWorldController from 'controllers/HelloWorld/HelloWorldController'
+import AuthenticateController from 'controllers/Authenticate/AuthenticateController'
+import { PrismaClient } from '@prisma/client'
 
 class Controllers {
-  public methods = {} as IMethods
+  public controllers = {} as { [key: string]: IControllers }
 
   constructor() {
-    const userController = new UserController()
+    const db = new PrismaClient()
     const helloWorldController = new HelloWorldController()
-    this.methods = {
-      ...userController.methods,
-      ...helloWorldController.methods
+    const userController = new UserController(db)
+    const authenticateController = new AuthenticateController(db)
+
+    this.controllers = {
+      helloWorldController,
+      userController,
+      authenticateController
+    }
+  }
+
+  // Combine all methods from the controllers into one object
+  public getAllMethods() {
+    return {
+      ...this.controllers.helloWorldController.methods,
+      ...this.controllers.userController.methods,
+      ...this.controllers.authenticateController.methods
     }
   }
 }

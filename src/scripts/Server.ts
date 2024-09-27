@@ -7,8 +7,8 @@ class Server {
   private app: Express
 
   constructor(private port: number) {
-    const { methods } = new Controllers()
-    const { routes } = new Routes(methods)
+    const controllers = new Controllers()
+    const { routes } = new Routes(controllers)
 
     this.app = express()
     this.app.use(cors())

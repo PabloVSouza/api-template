@@ -6,18 +6,25 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/main.ts",
-    "build": "tsc && tsc-alias",
+    "build": "npx prisma generate && tsc && tsc-alias",
     "start": "node dist/main.js"
   },
   "dependencies": {
+    "@prisma/client": "5.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "jose": "^5.9.3",
+    "md5": "^2.3.0",
+    "prisma-better-errors": "^1.0.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/apicache": "^1.6.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/md5": "^2.3.5",
+    "prisma": "^5.20.0",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2"

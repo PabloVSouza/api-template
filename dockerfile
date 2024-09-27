@@ -19,6 +19,7 @@ RUN yarn build
 
 FROM node:lts-alpine AS runtime
 COPY --chown=node:node --from=dependencies /app/node_modules /home/node/app/node_modules/
-# COPY --chown=node:node --from=build /app/node_modules/.prisma /home/node/app/node_modules/.prisma/
+COPY --chown=node:node --from=build /app/node_modules/.prisma /home/node/app/node_modules/.prisma/
+COPY --chown=node:node --from=build /app/database.db /home/node/app/database.db
 COPY --from=build --chown=node:node /app/dist /home/node/app/dist/
 CMD [ "node", "/home/node/app/dist/main.js" ]

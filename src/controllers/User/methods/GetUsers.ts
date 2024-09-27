@@ -1,13 +1,17 @@
+import { PrismaClient } from '@prisma/client'
 import type { Request } from 'express'
 
 class GetUsers implements IMethod {
+  constructor(private db: PrismaClient) {}
+
   public params: IMethodParams = {
     verb: 'post',
     requireAuth: true
   }
-  public exec(req: Request): Promise<any> | any {
-    const { name } = req.body
-    return { message: `Hello ${name}` }
+
+  public async exec(req: Request) {
+    const personsDB = await this.db.person.findMany()
+    return personsDB
   }
 }
 

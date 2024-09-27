@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Person" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "level" INTEGER NOT NULL DEFAULT 50
+);
